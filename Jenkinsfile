@@ -3,7 +3,7 @@ pipeline {
     environment {
         EC2INSTANCE = 'ec2-user@44.197.215.11'
         APPNAME = 'python-app-demo'
-        REGISTRY = 'roxsross12'
+        REGISTRY = 'luisman10'
         DOCKER_HUB_LOGIN = credentials('dockerhub')
     }
 
