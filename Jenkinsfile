@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        EC2INSTANCE = 'ec2-user@44.199.211.39'
+        EC2INSTANCE = 'ec2-user@44.197.215.11'
         APPNAME = 'python-app-demo'
         REGISTRY = 'roxsross12'
         DOCKER_HUB_LOGIN = credentials('docker-hub')
@@ -49,10 +49,10 @@ pipeline {
                 }
             }
         }
-        stage('Notification') {
-            steps {
-                echo 'Stage Notify'
-                sh 'curl -s -X POST https://api.telegram.org/bot5881753165:AAEjB95ZRDUW0kRMCzMA7C1yjpHemiGTpiM/sendMessage -d chat_id=-1001508340482 -d disable_web_page_preview=True -d text="Deploy Proyecto:$JOB_NAME *$BUILD_NUMBER*" -d parse_mode=markdown'
+        #stage('Notification') {
+        #    steps {
+        #        echo 'Stage Notify'
+        #        sh 'curl -s -X POST https://api.telegram.org/bot5881753165:AAEjB95ZRDUW0kRMCzMA7C1yjpHemiGTpiM/sendMessage -d chat_id=-1001508340482 -d disable_web_page_preview=True -d text="Deploy Proyecto:$JOB_NAME *$BUILD_NUMBER*" -d parse_mode=markdown'
             }
         }
     }
